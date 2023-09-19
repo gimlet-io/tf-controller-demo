@@ -1,0 +1,28 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: gimlet-io-tf-controller-demo
+  namespace: flux-system
+spec:
+  interval: 15s
+  ref:
+    branch: main
+  url: https://github.com/gimlet-io/tf-controller-demo
+---
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: civo-instance
+  namespace: flux-system
+spec:
+  approvePlan: "auto"
+  interval: 1m
+  path: ./terraform/civo-instance-demo-resources
+  sourceRef:
+    kind: GitRepository
+    name: gimlet-io-tf-controller-demo
+    namespace: flux-system
+  varsFrom:
+  - kind: Secret
+    name: civo-credentials
