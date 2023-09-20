@@ -74,7 +74,6 @@ Also, you can check the logs of terraform apply on the tf-runner:
 kubectl logs -n flux-system  -f civo-instance-tf-runner
 ```
 
-
 ## 4. Clean up the CIVO VM instance and the cluster
 
 Finally, delete the cluster `k3d cluster delete tf-controller-demo`

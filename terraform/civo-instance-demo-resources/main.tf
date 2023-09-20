@@ -24,3 +24,7 @@ resource "civo_instance" "foo" {
     size = "g3.small"
     disk_image = "debian-10"
 }
+
+output "public_ip" {
+  value = data.civo_instance.myhostaname.public_ip
+}
