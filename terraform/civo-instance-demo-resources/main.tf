@@ -26,5 +26,5 @@ resource "civo_instance" "foo" {
 }
 
 output "public_ip" {
-  value = data.civo_instance.foo.public_ip
+  value = civo_instance.foo.public_ip
 }
