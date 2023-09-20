@@ -1,5 +1,7 @@
 # Welcome to tf-controller-demo
 
+## Fork this repository
+
 ## 1. Create a cluster using k3d
 
 ```
@@ -33,6 +35,10 @@ kubectl create secret generic civo-credentials -n flux-system \
   --from-literal=api_key=your-api-key
 ```
 
+## Point manifests to your fork
+
+Update `manifests/civo-instance.yaml` to point to your fork instead of `https://github.com/gimlet-io/tf-controller-demo`
+
 ## 3. Provision a CIVO VM instance using tf-controller
 
 ```bash
@@ -51,20 +57,24 @@ Also, you can check the logs of terraform apply on the tf-runner:
 kubectl logs -n flux-system  -f civo-instance-tf-runner
 ```
 
-## 4. Clean up the CIVO VM instance and the cluster
+## Make changes to the VM instance
+
+- Add a new tag in `terraform/civo-instance-demo-resources/main.tf`
+- Push changes to git.
+
+Then watch the terraform object:
 
 ```bash
-kubectl delete -f manifests/civo-instance.yaml
-```
-
-Then watch the changes:
-
-```
 kubectl get terraform -n flux-system -w
 ```
 
-```
+Also, you can check the logs of terraform apply on the tf-runner:
+
+```bash
 kubectl logs -n flux-system  -f civo-instance-tf-runner
 ```
+
+
+## 4. Clean up the CIVO VM instance and the cluster
 
 Finally, delete the cluster `k3d cluster delete tf-controller-demo`
