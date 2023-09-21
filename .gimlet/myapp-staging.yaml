@@ -1,0 +1,23 @@
+app: my-app
+env: staging
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.57.0
+values:
+  image:
+    repository: nginx
+    tag: 1.19.3
+  resources:
+    ignoreLimits: true
+dependencies:
+- name: db
+  kind: terraform
+  spec:
+    module:
+      url: https://github.com/gimlet-io/tfmodules?branch=main&path=azure/postgresql-flexible-server-database
+    values:
+      database: my-app-2
+      user: my-app-2
+    secret: secret-with-module-sensitive-input-variables
