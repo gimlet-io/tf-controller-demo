@@ -18,6 +18,7 @@ metadata:
 spec:
   approvePlan: "auto"
   interval: 1m
+  storeReadablePlan: human
   path: ./terraform/civo-instance-demo-resources
   sourceRef:
     kind: GitRepository

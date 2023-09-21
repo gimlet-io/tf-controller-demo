@@ -19,7 +19,7 @@ provider "civo" {
 
 resource "civo_instance" "foo" {
     hostname = "tfcontroller.demo"
-    tags = ["hello", "kcd", "austria"]
+    tags = ["hey", "kcd", "austria"]
     notes = "This server was created via tf-controller"
     size = "g3.small"
     disk_image = "debian-10"
