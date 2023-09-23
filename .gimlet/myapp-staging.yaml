@@ -16,8 +16,8 @@ dependencies:
   kind: terraform
   spec:
     module:
-      url: https://github.com/gimlet-io/tfmodules?branch=main&path=azure/postgresql-flexible-server-database
+      url: https://github.com/gimlet-io/tfmodules?branch=civo-test&path=civo/logical-database
     values:
       database: my-app-2
-      user: my-app-2
-    secret: secret-with-module-sensitive-input-variables
+      user: "my-app-2"
+    secret: civo-database-credentials
