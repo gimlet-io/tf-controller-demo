@@ -16,7 +16,7 @@ dependencies:
   kind: terraform
   spec:
     module:
-      url: https://github.com/gimlet-io/tfmodules?branch=civo-test&path=civo/logical-database
+      url: https://github.com/gimlet-io/tfmodules?branch=main&path=civo/logical-database
     values:
       database: my-app-2
       user: "my-app-2"

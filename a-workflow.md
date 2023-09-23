@@ -18,3 +18,7 @@ kubectl get terraform -n flux-system -w
 ```bash
 kubectl logs -n flux-system -f my-app-db-tf-runner
 ```
+
+```bash
+kubectl get secret my-app-db-output --namespace flux-system --template='{{ index .data "user_password"}}' | base64 -d
+```
