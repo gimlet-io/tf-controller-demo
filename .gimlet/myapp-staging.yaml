@@ -1,6 +1,6 @@
 app: my-app
 env: staging
-namespace: default
+namespace: flux-system
 chart:
   repository: https://chart.onechart.dev
   name: onechart

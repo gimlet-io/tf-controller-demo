@@ -71,7 +71,7 @@ kubectl get terraform -n flux-system -w
 Also, you can check the logs of terraform apply on the tf-runner:
 
 ```bash
-kubectl logs -n flux-system  -f civo-instance-tf-runner
+kubectl logs -n flux-system -f civo-instance-tf-runner
 ```
 
 ## 4. Clean up the CIVO VM instance and the cluster

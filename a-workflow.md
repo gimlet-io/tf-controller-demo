@@ -10,3 +10,11 @@ kubectl create secret generic civo-database-credentials -n flux-system \
 ```bash
 gimlet manifest template -f .gimlet/myapp-staging.yaml
 ```
+
+```bash
+kubectl get terraform -n flux-system -w
+```
+
+```bash
+kubectl logs -n flux-system -f my-app-db-tf-runner
+```
