@@ -27,3 +27,5 @@ spec:
   varsFrom:
   - kind: Secret
     name: civo-credentials
+  writeOutputsToSecret:
+    name: civo-instance-public-ip
