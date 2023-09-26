@@ -35,6 +35,10 @@ kubectl create secret generic civo-credentials -n flux-system \
   --from-literal=api_key=your-api-key
 ```
 
+```
+sh create-secret.sh
+```
+
 ## Point manifests to your fork
 
 Update `manifests/civo-instance.yaml` to point to your fork instead of `https://github.com/gimlet-io/tf-controller-demo`
